@@ -43,10 +43,10 @@ public class Report extends AppCompatActivity {
             public void onClick(View v) {
                 if(summary.getText().toString()!=null&&name.getText().toString()!=null&&phone.getText().toString()!=null) {
                     id= Integer.toString(r.nextInt(10000-1000)+1000);
-                    body="A report has been filed at "+city+" "+state+" "+address+"\n"+"Desctription:\n"+summary.getText().toString()+"\n"+"Call back info:\nNumber :"+phone.getText().toString()+"  "+"Name: "+name.getText().toString();
+                    body="A report has been filed at "+city+" "+state+" "+address+"\n"+"Desctription:\n"+summary.getText().toString()+"\n"+"Call back info:\nNumber :"+phone.getText().toString()+"  "+"Name: "+name.getText().toString()+"\n\nID:"+id;
                     Intent i = new Intent(Intent.ACTION_SEND);
                     i.setType("message/rfc822");
-                    i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"thomaspayan91.com"});
+                    i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"thomaspayan91@gmail.com"});
                     i.putExtra(Intent.EXTRA_SUBJECT, "Litter Report id:"+id);
                     i.putExtra(Intent.EXTRA_TEXT   , body);
                     try {
